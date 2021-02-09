@@ -1,0 +1,14 @@
+﻿@model ToDoList.Models.ItemToDo
+@{
+    ViewBag.Title = Model.Text;
+}
+<h2>Пользователь @Model.Text</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Идентификатор</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Text</dt>
+        <dd>@Model.Text</dd>
+    </dl>
+</div>

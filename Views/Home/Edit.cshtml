@@ -1,0 +1,20 @@
+﻿@model ToDoList.Models.ItemToDo
+@{
+    ViewBag.Title = "Редактирование Задачь";
+}
+<form asp-action="edit" asp-controller="home" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label asp-for="Text" class="control-label">Text</label>
+        <input type="text" asp-for="Text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IsDone" class="control-label">IsDone</label>
+        <select asp-for="IsDone">
+            <option  value="True">True</option>
+            <option value="Flase">Flase</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </div>
+</form>

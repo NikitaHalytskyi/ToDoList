@@ -1,0 +1,14 @@
+﻿@model ToDoList.Models.ItemToDo
+@{
+    ViewBag.Title = "Добавление пользователя";
+}
+<form asp-action="create" asp-controller="home">
+    <div class="form-group">
+        <label asp-for="Text" class="control-label">Задача</label>
+        <input type="text" asp-for="Text" class="form-control" />
+    </div>
+        <input type="hidden" value="false" asp-for="IsDone" class="form-control" />
+    <div class="form-group">
+        <input type="submit" value="Отправить" class="btn btn-default" />
+    </div>
+</form>

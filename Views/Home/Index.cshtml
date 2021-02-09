@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ToDoList.Models.ItemToDo>
+@{
+    ViewBag.Title = "Все задачи";
+}
+<a asp-action="Create">Добавить задачу</a>
+<table class="table">
+    <tr><td>Text</td><td>IsDone</td></tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    @if (item.IsDone)
+    {
+    <td><strike>@item.Text<strike></td>
+    }
+    else
+    {
+    <td>@item.Text</td>
+    }
+    
+    <td>
+        <input type="checkbox" disabled checked="@item.IsDone" />
+    </td>
+    <td>
+        <a asp-action="Details" asp-controller="Home" asp-route-id="@item.Id">Подробнее</a> |
+        <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.Id">Изменить</a> |
+        <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.Id">Удалить</a>
+    </td>
+</tr>
+    }
+</table>
